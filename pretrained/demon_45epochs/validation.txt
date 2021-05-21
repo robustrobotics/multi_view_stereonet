@@ -1,0 +1,16 @@
+epoch loss epe outlier_rate1 outlier_rate2 outlier_rate3 d1_all 
+30 8.3197021484375 nan nan nan nan nan 
+31 8.540136337280273 nan nan nan nan nan 
+32 8.73443603515625 nan nan nan nan nan 
+33 8.4909029006958 nan nan nan nan nan 
+34 8.238957405090332 nan nan nan nan nan 
+35 8.042570114135742 nan nan nan nan nan 
+36 8.247590065002441 nan nan nan nan nan 
+37 8.156904220581055 nan nan nan nan nan 
+38 7.982898712158203 nan nan nan nan nan 
+39 8.145879745483398 nan nan nan nan nan 
+40 8.218496322631836 nan nan nan nan nan 
+41 8.046414375305176 nan nan nan nan nan 
+42 8.030464172363281 nan nan nan nan nan 
+43 8.489471435546875 nan nan nan nan nan 
+44 7.8439555168151855 nan nan nan nan nan 

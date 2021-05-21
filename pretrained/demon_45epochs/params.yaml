@@ -1,0 +1,50 @@
+# Paths.
+depthest_root: "/home/wngreene/Projects/depthest"
+data_root: "/nobackup/users/wngreene/data"
+previous_checkpoint_dir: "/nobackup/users/wngreene/models/depthest/multi_view_stereonet/2020.10.17_23.59.15_mvsn_pp_demon_30epochs/checkpoints/epoch0029" # Previous checkpoint to load.
+output_dir: "/nobackup/users/wngreene/models/depthest/multi_view_stereonet"
+
+split: "demon" # Training/validation split (eigen|kitti|kitti_odom|sceneflow_driving|sceneflow_flying|gta_sfm|demon)
+size: [480, 640] # Images will be resized to this size before being passed through network.
+
+num_train_images: 0 # Number of training images. Set to 0 to use all.
+num_val_images: 0 # Number of validation images. Set to 0 to use all.
+
+num_epochs: 45 # 150 for gta-sfm (17k samples). 60 for demon (170k samples).
+batch_size: 8 # For horovod, this is batch size *per* GPU!
+batches_per_step: 1 # Accumulate gradients for N batches before making step.
+
+shuffle: True # Shuffle training data.
+augment: True # Perform data augmentation.
+num_workers: 4 # Number of dataloader workers. (For hovorod, this is *per* GPU!)
+
+# Random number seed.
+seed: 3
+
+num_levels: 5
+num_idepth_samples: 12 # 192 at pyramid level 4.
+
+# Learning rate in gradient descent.
+optimizer: "adam" # adam|rmsprop|sgd
+scheduler_gamma: 1.0 # 0.9995 good for 100images/3500epochs
+learning_rate: 0.001 # 0.001 for gta-sfm
+
+# Loss params.
+estimate_right_idepthmap: False
+reconstruction_factor: 0.0
+left_right_factor: 0.0
+supervision_factor: 1.0
+
+logging_level: 20 # 20: INFO, 10: DEBUG
+print_freq: 1 # Print loss to sprint every N steps.
+debug_image_freq: 50 # Save debug outputs for every N training images. 200 for gta_sfm, 2000 for demon.
+# debug_epoch_freq: 3 # Save debug outputs every N epochs. 20 for gta_sfm. 3 for demon.
+plot_freq: 500 # Make plots every N steps.
+
+# Make CuDNN deterministic. This may limit performance, so turn off during
+# production.
+cudnn_deterministic: False
+
+# Use heuristics to optimize kernels for given input sizes. Only use if input
+# sizes do not change.
+cudnn_benchmark: True
