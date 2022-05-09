@@ -1,4 +1,4 @@
-# MultiViewSteroNet
+# MultiViewStereoNet
 
 MultiViewStereoNet is a learning-based method for multi-view stereo (MVS) depth
 estimation capable of recovering depth from images taken from known, but
